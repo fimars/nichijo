@@ -77,9 +77,16 @@ import { SITE_TITLE } from '../consts';
 	.social-links a {
 		display: flex;
 	}
+
+
 	@media (max-width: 720px) {
 		.social-links {
 			display: none;
+		}
+		.internal-links {
+			flex: 1;
+			display: flex;
+			justify-content: flex-end;
 		}
 	}
 </style>
