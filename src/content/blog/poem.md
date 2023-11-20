@@ -1,8 +1,7 @@
 ---
-title: 'First post'
+title: 'poem'
 description: 'poem'
 pubDate: 'Nov 5 2023'
-heroImage: '/blog-placeholder-3.jpg'
 ---
 
 ## : P

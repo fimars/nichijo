@@ -1,8 +1,7 @@
 ---
-title: 'DRAFT: Typescript + Proxy = API'
-description: 'Typescript + Proxy = API'
+title: 'masto.js'
+description: 'awesome typescript project'
 pubDate: 'Nov 7 2023'
-heroImage: '/blog-placeholder-1.jpg'
 ---
 
 

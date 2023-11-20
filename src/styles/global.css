@@ -5,8 +5,8 @@
  */
 
 :root {
-	--accent: #2337ff;
-	--accent-dark: #000d8a;
+	--accent: #ad4fe8;
+	--accent-dark: #5b1fa5;
 	--black: 15, 18, 25;
 	--gray: 96, 115, 159;
 	--gray-light: 229, 233, 240;
@@ -15,22 +15,16 @@
 	--box-shadow: 0 2px 6px rgba(var(--gray), 25%), 0 8px 24px rgba(var(--gray), 33%),
 		0 16px 32px rgba(var(--gray), 33%);
 }
-@font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-regular.woff') format('woff');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
+
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
 }
-@font-face {
-	font-family: 'Atkinson';
-	src: url('/fonts/atkinson-bold.woff') format('woff');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
 }
+
 body {
-	font-family: 'Atkinson', sans-serif;
 	margin: 0;
 	padding: 0;
 	text-align: left;
@@ -43,11 +37,24 @@ body {
 	line-height: 1.7;
 }
 main {
-	width: 720px;
+	max-width: calc(100% - 2em);
+	max-width: 100%;
+	margin: 0;
+}
+.home {
+	padding: 4em 0;
 	max-width: calc(100% - 2em);
 	margin: auto;
-	padding: 3em 1em;
+	color: rgb(var(--gray-dark));
 }
+
+h1.title {
+	margin: 0;
+	font-size: calc(100vw / 8);
+	font-weight: 600;
+	letter-spacing: -4px;
+}
+
 h1,
 h2,
 h3,
@@ -117,10 +124,10 @@ pre > code {
 	all: unset;
 }
 blockquote {
-	border-left: 4px solid var(--accent);
-	padding: 0 0 0 20px;
+	padding: 0 0 0 10px;
 	margin: 0px;
 	font-size: 1.333em;
+	color: rgba(var(--gray), 80%);
 }
 hr {
 	border: none;
@@ -151,4 +158,53 @@ hr {
 	clip-path: inset(50%);
 	/* added line to stop words getting smushed together (as they go onto seperate lines and some screen readers do not understand line feeds as a space */
 	white-space: nowrap;
+}
+
+
+.blogs {
+	display: grid;
+	gap: 30px;
+	grid-template-columns: repeat(12, 1fr);
+}
+.description {
+	grid-column: 12 span;
+}
+.blogs-list {
+	grid-column: 12 span;
+}
+
+@media (min-width: 1024px) {
+	.home {
+		padding: 8em 4em;
+	}
+	.blogs {
+		padding: 4em 0;
+	}
+	.description {
+		grid-column: 4 span;
+	}
+	.blogs-list {
+		grid-column: 8 span;
+	}
+}
+
+
+.blogs-list ul {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+.blogs-list li {
+	list-style: none;
+	width: fit-content;
+}
+
+.blogs-list li a {
+	text-decoration: none;
+}
+
+.blogs-list .date {
+	color: rgba(var(--gray), 80%)
 }
