@@ -23,6 +23,8 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <!-- Font preloads -->
 <link rel="preconnect" href="https://rsms.me/">
 <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+<link rel="preload" href="https://rsms.me/inter/font-files/InterVariable.woff2?v=4.0" as="font" type="font/woff2" crossorigin="anonymous">
+<link rel="preload" href="https://rsms.me/inter/font-files/InterVariable-Italic.woff2?v=4.0" as="font" type="font/woff2" crossorigin="anonymous">
 
 <!-- Canonical URL -->
 <link rel="canonical" href={canonicalURL} />
