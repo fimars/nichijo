@@ -1,8 +1,10 @@
 ---
-title: 'Microsoft.PowerShell_profile.ps1'
+title: 'posh profile'
 description: ''
 pubDate: '1/23 2024'
 ---
+
+### Microsoft.PowerShell_profile.ps1
 
 ```ps1
 # https://github.com/gluons/powershell-git-aliases
