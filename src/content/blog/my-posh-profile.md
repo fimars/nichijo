@@ -1,5 +1,5 @@
 ---
-title: 'posh profile'
+title: 'posh> cat $PROFILE'
 description: ''
 pubDate: '1/23 2024'
 ---
