@@ -1,57 +1,63 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import { getCollection } from "astro:content";
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import Header from "../components/Header.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 
 const posts = (await getCollection("blog")).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header title={SITE_TITLE} />
-		<main>
-			<div class="home">
-				<h1 class="title">Nichijo</h1>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header title={SITE_TITLE} />
+    <main>
+      <div class="home">
+        <h1 class="title">Nichijo</h1>
 
-				<div class="blogs">
-					<div class="description">
-						<p>
-							It is common sense to take a method and try it. If it fails, admit it frankly and try another. But above all, try something.
-						</p>
-						<img width="180" alt="riki~haaaaa~" src="/riki-love.jpeg" />
-						<p>
-							and 
-							riiikki. love~ 😘
-						</p>
-					</div>
-					<section class="blogs-list">
-						<ul>
-							{
-								posts.map((post) => (
-									<li>
-										<a href={`/${post.slug}/`}>
-											<h4>{post.data.title}</h4>
-										</a>
-										<div class="date">
-											<FormattedDate date={post.data.pubDate} />
-										</div>
-									</li>
-								))
-							}
-						</ul>
-					</section>
-				</div>
-			</div>
-		</main>
-		<Footer />
-	</body>
+        <div class="blogs">
+          <div class="description">
+            <p>
+              It is common sense to take a method and try it. If it fails, admit
+              it frankly and try another. But above all, try something.
+            </p>
+            <p>
+              在离开世界之前一切都是过程 <br />
+              ……<br />
+              那些以为是结果 其实是每一站 <br />
+              ……<br />
+              你没有看过的陌生的脸 更热或更冷的水 <br />
+              —— 蛋堡 <br />
+            </p>
+            <img width="180" alt="riki~haaaaa~" src="/riki-love.jpeg" />
+            <p>and riiikki. love~ 😘</p>
+          </div>
+          <section class="blogs-list">
+            <ul>
+              {
+                posts.map((post) => (
+                  <li>
+                    <a href={`/${post.slug}/`}>
+                      <h4>{post.data.title}</h4>
+                    </a>
+                    <div class="date">
+                      <FormattedDate date={post.data.pubDate} />
+                    </div>
+                  </li>
+                ))
+              }
+            </ul>
+          </section>
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </body>
 </html>

@@ -168,6 +168,7 @@ hr {
 	grid-template-columns: repeat(12, 1fr);
 }
 .description {
+	line-height: 1.5em;
 	grid-column: 12 span;
 }
 .blogs-list {
