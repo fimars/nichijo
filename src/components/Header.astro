@@ -1,51 +1,49 @@
 ---
-import HeaderLink from './HeaderLink.astro';
-import { SITE_TITLE } from '../consts';
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
 ---
 
 <header>
-	<nav>
-		<h2></h2>
-		<div class="internal-links">
-			<HeaderLink href="/">/</HeaderLink>
-			<HeaderLink href="/about">About</HeaderLink>
-		</div>
-	</nav>
+  <nav>
+    <div class="internal-links">
+      <HeaderLink href="/">/</HeaderLink>
+      <!-- <HeaderLink href="/about">关于</HeaderLink> -->
+    </div>
+  </nav>
 </header>
 <style>
-	header {
-		margin: 0;
-		padding: 0.5em 2em;
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
+  header {
+    margin: 0;
+    padding: 0.5em 2em;
+  }
+  h2 {
+    margin: 0;
+    font-size: 1em;
+  }
 
-	.internal-links {
-		display: flex;
-		gap: 2em;
-	}
+  .internal-links {
+    display: flex;
+    gap: 2em;
+  }
 
-	nav {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		gap: 2em;
-	}
-	nav a {
-		text-align: center;
-		color: var(--black);
-		border-bottom: 4px solid transparent;
-		text-decoration: none;
-	}
-	nav a.active {
-		text-decoration: none;
-		border-bottom-color: var(--accent);
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2em;
+  }
+  nav a {
+    text-align: center;
+    color: var(--black);
+    border-bottom: 4px solid transparent;
+    text-decoration: none;
+  }
+  nav a.active {
+    text-decoration: none;
+    border-bottom-color: var(--accent);
+  }
+  .social-links,
+  .social-links a {
+    display: flex;
+  }
 </style>
