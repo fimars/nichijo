@@ -29,9 +29,8 @@ body {
 	padding: 0;
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	color: rgb(var(--gray-dark));
+	color: rgb(var(--black));
 	font-size: 20px;
-	line-height: normal;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: #fff;
@@ -68,7 +67,7 @@ h5,
 h6 {
 	margin: 0 0 0.5rem 0;
 	color: rgb(var(--black));
-	font-weight: 600;
+	font-weight: 500;
 }
 h1 {
 	font-size: 2.4em;
@@ -194,18 +193,19 @@ hr {
 }
 
 
-.blogs-list ul {
+ul {
 	padding: 0;
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	gap: 0.5em;
+	list-style-position: inside;
 }
-.blogs-list li {
-	list-style: none;
+li {
 	width: fit-content;
+	color: rgb(var(--gray-dark))
 }
 
-.blogs-list li a {
+li a {
 	text-decoration: none;
 }
 

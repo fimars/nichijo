@@ -5,37 +5,30 @@ import { SITE_TITLE } from "../consts";
 
 <header>
   <nav>
-    <div class="internal-links">
-      <HeaderLink href="/">/</HeaderLink>
-      <!-- <HeaderLink href="/about">关于</HeaderLink> -->
-    </div>
+    <HeaderLink href="/">/</HeaderLink>
+    <HeaderLink href="/about">chasingheartb status</HeaderLink>
   </nav>
 </header>
 <style>
   header {
     margin: 0;
-    padding: 0.5em 2em;
+    padding: 18px;
   }
   h2 {
     margin: 0;
     font-size: 1em;
   }
 
-  .internal-links {
-    display: flex;
-    gap: 2em;
-  }
-
   nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 2em;
+    flex-direction: row-reverse;
+    justify-content: end;
+    gap: 1em;
   }
   nav a {
     text-align: center;
     color: var(--black);
-    border-bottom: 4px solid transparent;
+    border-bottom: 2px solid transparent;
     text-decoration: none;
   }
   nav a.active {
