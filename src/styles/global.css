@@ -193,7 +193,7 @@ hr {
 }
 
 
-ul {
+ul, ol {
 	padding: 0;
 	display: flex;
 	flex-direction: column;
@@ -207,6 +207,11 @@ li {
 
 li a {
 	text-decoration: none;
+}
+
+.blogs-list ul {
+	gap: 1.5em;
+	list-style: none;
 }
 
 .blogs-list .date {
