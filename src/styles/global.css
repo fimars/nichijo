@@ -38,7 +38,7 @@ body {
 	text-shadow: 1px 1px 1px rgba(0,0,0,.04);
 	min-height: 100vh;
 	background-image: linear-gradient(to right,rgba(0,0,0,.04) 1px,transparent 1px),linear-gradient(to bottom,rgba(0,0,0,.04) 1px,transparent 1px);
-	background-size: 7px 7px;
+	background-size: 18px 18px;
 }
 main {
 	max-width: calc(100% - 2em);
