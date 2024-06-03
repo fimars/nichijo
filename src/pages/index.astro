@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import FormattedDate from "../components/FormattedDate.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Divider from "../components/Divider.astro";
 
 const posts = (await getCollection("blog")).sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
@@ -13,20 +14,21 @@ const posts = (await getCollection("blog")).sort(
   <div class="font-sans flex flex-col gap-8 relative">
     <h1 class="text-4xl">{SITE_TITLE}</h1>
     <pre
-      class="font-serif text-wrap whitespace-normal px-4">
-          It is common sense to take a method and try it. If it fails, admit it
-          frankly and try another. But above all, try something.
-        </pre>
+      class="font-serif pl-2 text-wrap whitespace-pre-line text-lg">秋天来了，却又感觉秋天似乎永远都不会来。不知疲倦地繁殖的季节，过于蓬勃的夏天像贪吃的怪物，越来越胖。不合时宜的热带夜在继续。我们像长满绿藻的湖水里的鱼，掀开被子胡乱踢腾。热得辗转反侧，好不容易睡着了，有时却被萦绕在耳边的蚊子吵得直起鸡皮疙瘩，猛然醒来。暴热和雨季在继续。大雨持续了十天，仿佛要吞没世界。反正我们只能忍受，因为所有人都是这样，所有人都在坚强地支撑。
 
-    <section class="flex flex-col gap-8 prose">
-      <ul>
+      ——《你的夏天还好吗？》</pre>
+
+    <Divider />
+
+    <section class="prose">
+      <ul class="flex flex-col gap-4 m-0 p-0">
         {
           posts.map((post) => (
-            <li>
-              <a href={`/${post.slug}/`}>
-                <h4>{post.data.title}</h4>
+            <li class="list-none m-0 p-0">
+              <a class="text-lg " href={`/${post.slug}/`}>
+                <span>{post.data.title}</span>
               </a>
-              <div class="date">
+              <div class="text-sm text-gray-400">
                 <FormattedDate date={post.data.pubDate} />
               </div>
             </li>
@@ -35,9 +37,11 @@ const posts = (await getCollection("blog")).sort(
       </ul>
     </section>
 
-    <div class="bg-compare py-8 border-t border-main flex flex-col gap-3">
-      <h3 class="text-lg">The best girl in the world 😘</h3>
-      <img width="320" alt="riki~haaaaa~" src="/riki-love.jpeg" />
+    <Divider />
+
+    <div class="pl-2 bg-compare flex flex-col gap-3">
+      <h3 class="text-lg font-serif">The best girl in the world 😘</h3>
+      <img width="340" alt="riki~haaaaa~" src="/riki-love.jpeg" />
     </div>
   </div>
 </BaseLayout>
