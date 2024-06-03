@@ -14,7 +14,12 @@ export default {
 				"PingFang SC Medium",
 				...defaultTheme.fontFamily.sans,
 			],
-			serif: ["Newsreader", "Noto Serif SC", ...defaultTheme.fontFamily.serif],
+			serif: [
+				"'Source Serif 4'",
+				"Newsreader",
+				"Noto Serif SC",
+				...defaultTheme.fontFamily.serif,
+			],
 			mono: ["JetBrains Mono", ...defaultTheme.fontFamily.mono],
 		},
 		extend: {

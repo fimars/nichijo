@@ -25,7 +25,10 @@ const posts = (await getCollection("blog")).sort(
         {
           posts.map((post) => (
             <li class="list-none m-0 p-0">
-              <a class="text-lg " href={`/${post.slug}/`}>
+              <a
+                class="text-lg hover:bg-yellow-300 transition-colors"
+                href={`/${post.slug}/`}
+              >
                 <span>{post.data.title}</span>
               </a>
               <div class="text-sm text-gray-400">

@@ -1,48 +1,46 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
+import Backward from "../components/Backward.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import BaseLayout from "./BaseLayout.astro";
+import Divider from "../components/Divider.astro";
 
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={description} />
-  </head>
-
-  <body>
-    <Header />
-    <main>
-      <article>
-        <div class="hero-image">
+<BaseLayout title={title} description={description}>
+  <a
+    class="text-[36px] cursor-pointer right-6 bottom-20 fixed md:absolute md:bottom-auto md:right-8 md:top-8
+   transition-colors hover:bg-yellow-300"
+    href="/"
+  >
+    <Backward />
+  </a>
+  <article>
+    <!-- <div class="hero-image">
+      {heroImage && <img width={1020} height={510} src={heroImage} alt="" />}
+    </div> -->
+    <div class="prose flex flex-col gap-4">
+      <div>
+        <div class="text-gray-400">
+          <FormattedDate date={pubDate} />
           {
-            heroImage && (
-              <img width={1020} height={510} src={heroImage} alt="" />
+            updatedDate && (
+              <div class="last-updated-on">
+                Last updated on <FormattedDate date={updatedDate} />
+              </div>
             )
           }
         </div>
-        <div class="prose">
-          <div class="title">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="last-updated-on">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
-            </div>
-            <h1>{title}</h1>
-          </div>
-          <slot />
-        </div>
-      </article>
-    </main>
-    <Footer />
-  </body>
-</html>
+        <h1 class="text-4xl">{title}</h1>
+      </div>
+
+      <Divider />
+      <div>
+        <slot />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

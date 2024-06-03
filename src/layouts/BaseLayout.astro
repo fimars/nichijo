@@ -5,11 +5,11 @@ import BaseHead, {
   type Props as HeadProps,
 } from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
-import Background from "../components/Background.astro";
+import FixedBackground from "../components/FixedBackground.astro";
 
 export type Props = HeadProps & { showHeader?: boolean };
 
-const { showHeader = true, ...head } = Astro.props;
+const { ...head } = Astro.props;
 ---
 
 <!doctype html>
@@ -24,13 +24,11 @@ const { showHeader = true, ...head } = Astro.props;
     <ViewTransitions />
   </head>
   <body class="bg-main text-main">
-    <div class="flex flex-col min-h-screen px-4 md:px-8">
-      <!-- <Nav /> -->
-      <!-- {showHeader && <Header />} -->
-      <Background />
-      <div class="md:pl-[10vw] lg:pl-[40vw] md:py-12 md:pb-32 py-4">
+    <div class="flex flex-col min-h-screen px-0 md:px-8">
+      <FixedBackground />
+      <div class="md:pl-[10vw] lg:pl-[40vw] md:py-12 md:pb-32 py-0">
         <main
-          class="grow border border-main w-full max-w-2xl mx-auto bg-compare p-4 md:p-12"
+          class="grow w-full max-w-2xl mx-auto bg-compare p-8 md:p-12 min-h-screen md:min-h-[90vh] relative"
         >
           <slot />
         </main>
