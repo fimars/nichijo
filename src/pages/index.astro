@@ -1,55 +1,43 @@
 ---
 import { getCollection } from "astro:content";
-import BaseHead from "../components/BaseHead.astro";
-import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
-import Header from "../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const posts = (await getCollection("blog")).sort(
-	(a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-  </head>
-  <body>
-    <Header title={SITE_TITLE} />
-    <main>
-      <div class="home">
-        <h1 class="title">Nichijo</h1>
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+  <div class="font-sans flex flex-col gap-8 relative">
+    <h1 class="text-4xl">{SITE_TITLE}</h1>
+    <pre
+      class="font-serif text-wrap whitespace-normal px-4">
+          It is common sense to take a method and try it. If it fails, admit it
+          frankly and try another. But above all, try something.
+        </pre>
 
-        <div class="blogs">
-          <div class="description">
-            <p>
-              It is common sense to take a method and try it. If it fails, admit
-              it frankly and try another. But above all, try something.
-            </p>
-            <img width="180" alt="riki~haaaaa~" src="/riki-love.jpeg" />
-            <p>and riiikki. love~ 😘</p>
-          </div>
-          <section class="blogs-list">
-            <ul>
-              {
-                posts.map((post) => (
-                  <li>
-                    <a href={`/${post.slug}/`}>
-                      <h4>{post.data.title}</h4>
-                    </a>
-                    <div class="date">
-                      <FormattedDate date={post.data.pubDate} />
-                    </div>
-                  </li>
-                ))
-              }
-            </ul>
-          </section>
-        </div>
-      </div>
-    </main>
-    <Footer />
-  </body>
-</html>
+    <section class="flex flex-col gap-8 prose">
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <a href={`/${post.slug}/`}>
+                <h4>{post.data.title}</h4>
+              </a>
+              <div class="date">
+                <FormattedDate date={post.data.pubDate} />
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <div class="bg-compare py-8 border-t border-main flex flex-col gap-3">
+      <h3 class="text-lg">The best girl in the world 😘</h3>
+      <img width="320" alt="riki~haaaaa~" src="/riki-love.jpeg" />
+    </div>
+  </div>
+</BaseLayout>

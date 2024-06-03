@@ -1,10 +1,10 @@
 ---
-title: 'posh> cat $PROFILE'
+title: 'My posh profile'
 description: ''
 pubDate: '1/23 2024'
 ---
 
-### Microsoft.PowerShell_profile.ps1
+### > cat $PROFILE
 
 ```ps1
 # https://github.com/gluons/powershell-git-aliases
