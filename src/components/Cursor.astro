@@ -9,28 +9,28 @@
   };
   window.addEventListener("mousemove", updateMousePosition);
 
-  // const parentHasAnchor = (el?: HTMLElement) => {
-  //   if (!el) return false;
-  //   let parent = el.parentElement;
-  //   while (parent) {
-  //     if (parent.tagName === "A") {
-  //       return true;
-  //     }
-  //     parent = parent.parentElement;
-  //   }
-  //   return false;
-  // };
+  const parentHasAnchor = (el?: HTMLElement) => {
+    if (!el) return false;
+    let parent = el.parentElement;
+    while (parent) {
+      if (parent.tagName === "A") {
+        return true;
+      }
+      parent = parent.parentElement;
+    }
+    return false;
+  };
 
-  // const updateOverActive = (ev: MouseEvent) => {
-  //   const cursor = document.querySelector<HTMLElement>("#cursor");
-  //   if (cursor) {
-  //     if (parentHasAnchor(ev.target as HTMLElement)) {
-  //       cursor.dataset["hover"] = "true";
-  //     } else {
-  //       cursor.dataset["hover"] = "false";
-  //     }
-  //   }
-  // };
+  const updateOverActive = (ev: MouseEvent) => {
+    const cursor = document.querySelector<HTMLElement>("#cursor");
+    if (cursor) {
+      if (parentHasAnchor(ev.target as HTMLElement)) {
+        cursor.dataset["hover"] = "true";
+      } else {
+        cursor.dataset["hover"] = "false";
+      }
+    }
+  };
 
   // const _2 = throttle(updateMousePosition, 300);
   // window.addEventListener("mousemove", _2);
