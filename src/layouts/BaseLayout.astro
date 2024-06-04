@@ -6,6 +6,7 @@ import BaseHead, {
 } from "../components/BaseHead.astro";
 import Footer from "../components/Footer.astro";
 import FixedBackground from "../components/FixedBackground.astro";
+// import Cursor from "../components/Cursor.astro";
 
 export type Props = HeadProps & { showHeader?: boolean };
 
@@ -26,6 +27,7 @@ const { ...head } = Astro.props;
   <body class="bg-main text-main">
     <div class="flex flex-col min-h-screen px-0 md:px-8">
       <FixedBackground />
+      <!-- <Cursor /> -->
       <div class="md:pl-[10vw] lg:pl-[40vw] md:py-12 md:pb-32 py-0">
         <main
           class="grow w-full max-w-2xl mx-auto bg-compare p-8 md:p-12 min-h-screen md:min-h-[90vh] relative"

@@ -1,0 +1,43 @@
+<script>
+  const updateMousePosition = (ev: MouseEvent) => {
+    let mousePosition = { x: ev.clientX, y: ev.clientY };
+    const cursor = document.querySelector<HTMLElement>("#cursor");
+    if (cursor) {
+      cursor.style.setProperty("--x", mousePosition.x + "PX");
+      cursor.style.setProperty("--y", mousePosition.y + "PX");
+    }
+  };
+  window.addEventListener("mousemove", updateMousePosition);
+
+  // const parentHasAnchor = (el?: HTMLElement) => {
+  //   if (!el) return false;
+  //   let parent = el.parentElement;
+  //   while (parent) {
+  //     if (parent.tagName === "A") {
+  //       return true;
+  //     }
+  //     parent = parent.parentElement;
+  //   }
+  //   return false;
+  // };
+
+  // const updateOverActive = (ev: MouseEvent) => {
+  //   const cursor = document.querySelector<HTMLElement>("#cursor");
+  //   if (cursor) {
+  //     if (parentHasAnchor(ev.target as HTMLElement)) {
+  //       cursor.dataset["hover"] = "true";
+  //     } else {
+  //       cursor.dataset["hover"] = "false";
+  //     }
+  //   }
+  // };
+
+  // const _2 = throttle(updateMousePosition, 300);
+  // window.addEventListener("mousemove", _2);
+</script>
+
+<div
+  id="cursor"
+  class="fixed z-10 -translate-x-1/2 -translate-y-1/2 border-solid size-9 border border-yellow-400 select-none pointer-events-none rounded-full left-[var(--x)] top-[var(--y)] data-[hover=true]:bg-yellow-400 data-[hover=true]:bg-opacity-30 transition-all data-[hover=true]:size-12"
+>
+</div>
