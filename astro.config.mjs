@@ -14,4 +14,11 @@ export default defineConfig({
 			applyBaseStyles: false,
 		}),
 	],
+
+	markdown: {
+		shikiConfig: {
+			// https://shiki.style/themes
+			theme: "vitesse-dark",
+		},
+	},
 });

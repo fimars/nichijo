@@ -86,6 +86,10 @@ export default {
 								lineHeight: 1.3,
 							},
 						},
+						pre: {
+							borderRadius: 0,
+							lineHeight: 1.6666,
+						},
 					},
 				},
 				lg: {

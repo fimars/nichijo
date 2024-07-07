@@ -8,6 +8,10 @@
   --color-bg-compare: 36 36 36;
   --color-border-main: 242 241 236;
 }
+::selection {
+  background-color: #ffff42;
+  color: #000;
+}
 
 html.dark {
   --color-text-main: 15, 18, 25;
@@ -24,4 +28,8 @@ html.dark {
     url("data:image/svg+xml;charset=utf8,%3Csvg%20width=%2710%27%20height=%2710%27%20viewBox=%270%200%2010%2010%27%20fill=%27none%27%20xmlns=%27http://www.w3.org/2000/svg%27%3E%3Ccircle%20cx=%275%27%20cy=%275%27%20r=%275%27%20fill=%27%23FFFF42%27/%3E%3C/svg%3E")
       5 5,
     auto;
+}
+
+.astro-code {
+  @apply -mx-4 text-wrap;
 }
