@@ -6,7 +6,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Divider from "../components/Divider.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
 );
 ---
 
@@ -45,12 +45,15 @@ const posts = (await getCollection("blog")).sort(
     <figure class="pl-2 bg-compare w-fit flex flex-col gap-3">
       <img
         class="mx-auto"
-        width="340"
+        width="440"
         alt="riki~haaaaa~"
-        src="/riki-love.jpeg"
+        src="/towa-love.jpeg"
       />
       <figcaption class="text-sm text-gray-400 font-mono">
-        The best girl in the world 😘
+        The best girl in the world 😘 <a
+          class="text-blue-700"
+          href="https://x.com/bliss_htt/status/1818454269118353549">source</a
+        >
       </figcaption>
     </figure>
   </div>
